@@ -17,7 +17,7 @@ class Settings implements Registerable {
 
 		?>
 		<label for="group-enable-braille">
-			<input type="checkbox" name="group-enable-braille" id="group-enable-braille" value="1" <?php checked( $enabled ); ?> /> <?php esc_html_e( 'Show Braille toggle fo group discussions', 'bp-braille' ); ?>
+			<input type="checkbox" name="group-enable-braille" id="group-enable-braille" value="1" <?php checked( $enabled ); ?> /> <?php esc_html_e( 'Show Braille toggle for group discussions', 'bp-braille' ); ?>
 		</label>
 		<?php
 	}
