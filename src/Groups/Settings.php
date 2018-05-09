@@ -27,7 +27,7 @@ class Settings implements Registerable {
 	 *
 	 * Security checks are done in `groups_screen_group_admin_settings()`.
 	 *
-	 * @param int $group_id Groupd ID.
+	 * @param int $group_id Group ID.
 	 * @return void.
 	 */
 	public function save( $group_id = 0 ) {
