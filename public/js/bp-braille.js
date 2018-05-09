@@ -76,12 +76,12 @@
 	app.toggleText = function(text, link, content) {
 		if ( link.hasClass('braille-on' ) ) {
 			link.removeClass('braille-on').addClass('braille-off');
-			link.text( 'Braille: Off' );
+			link.text( bpBraille.strings.off );
 
 			content.html( text.braille );
 		} else {
 			link.removeClass('braille-off').addClass('braille-on');
-			link.text( 'Braille: On' );
+			link.text( bpBraille.strings.on );
 
 			content.html( text.original );
 		}

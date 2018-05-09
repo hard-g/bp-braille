@@ -45,4 +45,12 @@ function assets() {
 	}
 
 	wp_enqueue_script( 'bp-braille', plugins_url( 'public/js/bp-braille.js', __FILE__ ), [ 'jquery' ], '0.1.0' );
+
+	$l10n = [
+		'strings' => [
+			'on'  => esc_html__( 'Braille: On', 'bp-braille' ),
+			'off' => esc_html__( 'Braille: Off', 'bp-braille' ),
+		]
+	];
+	wp_localize_script( 'bp-braille', 'bpBraille', $l10n );
 }
