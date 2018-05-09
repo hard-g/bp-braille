@@ -19,7 +19,7 @@ class Settings implements Registerable {
 		?>
 		<label for="bp-messages-braille">
 			<input type="checkbox" name="bp-messages-braille" id="bp-messages-braille" value="1" <?php checked( $show_braille ); ?> />
-			<?php _e('Show Braille toggle for private messages', 'bp-braille' ); ?>
+			<?php esc_html_e( 'Show Braille toggle for private messages', 'bp-braille' ); ?>
 		</label>
 		<?php
 	}
@@ -37,7 +37,7 @@ class Settings implements Registerable {
 		$updated = bp_update_user_meta( bp_displayed_user_id(), 'bp_messages_braille', $show_braille );
 
 		if ( $updated ) {
-			bp_core_add_message( __( 'Your settings have been saved', 'bp-braille' ), 'success' );
+			bp_core_add_message( esc_html__( 'Your settings have been saved', 'bp-braille' ), 'success' );
 		}
 	}
 }
