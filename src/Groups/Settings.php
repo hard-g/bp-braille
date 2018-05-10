@@ -11,8 +11,18 @@ class Settings implements Registerable {
 		add_action( 'groups_group_details_edited', [ $this, 'save' ] );
 	}
 
+	/**
+	 * Renders Braille settings for a group.
+	 *
+	 * @return void
+	 */
 	public function render() {
 		$group = groups_get_current_group();
+
+		if ( ! bp_group_is_forum_enabled( $group ) ) {
+			return;
+		}
+
 		$enabled = (bool) groups_get_groupmeta( (int) $group->id , 'group_enable_braille', true );
 
 		?>
