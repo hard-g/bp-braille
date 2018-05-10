@@ -41,7 +41,7 @@ function assets() {
 }
 
 /**
- * Checks Baille LibLouis server connection.
+ * Checks Braille LibLouis server connection.
  *
  * @return bool
  */
@@ -57,7 +57,7 @@ function braille_works() {
 		return false;
 	}
 
-	$works = (bool) get_transient( 'braille_works' );
+	$works = get_transient( 'braille_works' );
 
 	if ( false === $works ) {
 		$response = wp_remote_post( $remote_url, [
@@ -67,10 +67,11 @@ function braille_works() {
 			'cookies' => []
 		] );
 
-		$works = 200 === wp_remote_retrieve_response_code( $response );
+		$code  = wp_remote_retrieve_response_code( $response );
+		$works = ( 200 === $code ) ? 1 : 0;
 
 		set_transient( 'braille_works', $works, HOUR_IN_SECONDS );
 	}
 
-	return $works;
+	return (bool) $works;
 }
