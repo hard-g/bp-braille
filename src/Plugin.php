@@ -41,7 +41,7 @@ class Plugin {
 			$instance->messages->ajax->register();
 		}
 
-		if ( bp_is_active( 'groups' ) ) {
+		if ( bp_is_active( 'groups' ) && function_exists( 'bbpress' ) ) {
 			$instance->groups = new \stdClass;
 			$instance->groups->template = new Groups\Template();
 			$instance->groups->template->register();
