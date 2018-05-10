@@ -16,6 +16,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
 
 	add_action( 'bp_loaded', __NAMESPACE__ . '\\bootstrap' );
+	add_action( 'updated_option', __NAMESPACE__ . '\\clear_cache' );
 }
 
 function bootstrap() {
@@ -74,4 +75,18 @@ function braille_works() {
 	}
 
 	return (bool) $works;
+}
+
+/**
+ * Clear cache if Braille plugin settings are updated.
+ *
+ * @param string $option
+ * @return void
+ */
+function clear_cache( $option ) {
+	if ( 0 !== strpos( $option, 'braille_' ) ) {
+		return;
+	}
+
+	delete_transient( 'braille_works' );
 }
