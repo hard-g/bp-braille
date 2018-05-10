@@ -27,7 +27,7 @@ class Ajax implements Registerable {
 
 		wp_send_json_success( [
 			'original' => $content,
-			'braille' => $braille,
+			'braille' => sprintf( '<span class="braille">%s</span>', $braille ),
 		] );
 	}
 }
