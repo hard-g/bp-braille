@@ -26,6 +26,8 @@
 			return false;
 		}
 
+		$content.addClass('braille-loading');
+
 		$.post( ajaxurl, {
 			action: 'bp_messages_braille',
 			'message_id': id,
@@ -33,6 +35,8 @@
 			'nonce': $link.data('braille-nonce')
 		}, function(response) {
 			if ( true === response.success ) {
+				$content.removeClass('braille-loading');
+
 				app.toggleText( response.data, $link, $content );
 
 				// Cache results
@@ -55,6 +59,8 @@
 			return false;
 		}
 
+		$content.addClass('braille-loading');
+
 		$.post( ajaxurl, {
 			action: 'bp_groups_braille',
 			'reply_id': reply_id,
@@ -63,6 +69,8 @@
 			'nonce': $link.data('braille-nonce')
 		}, function(response) {
 			if ( true === response.success ) {
+				$content.removeClass('braille-loading');
+
 				app.toggleText( response.data, $link, $content );
 
 				// Cache results

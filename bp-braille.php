@@ -7,7 +7,7 @@
  * Author URI:      https://hardg.com/
  * Text Domain:     bp-braille
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.2.0
  */
 
 namespace HardG\BpBraille;
@@ -30,7 +30,8 @@ function bootstrap() {
 }
 
 function assets() {
-	wp_enqueue_script( 'bp-braille', plugins_url( 'public/js/bp-braille.js', __FILE__ ), [ 'jquery' ], '0.1.0' );
+	wp_enqueue_script( 'bp-braille', plugins_url( 'public/js/bp-braille.js', __FILE__ ), [ 'jquery' ], '0.2.0' );
+	wp_enqueue_style( 'bp-braille-styles', plugins_url( 'public/css/bp-braille.css', __FILE__ ), [], '0.2.0' );
 
 	$l10n = [
 		'strings' => [
