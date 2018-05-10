@@ -25,17 +25,7 @@ function bootstrap() {
 		return;
 	}
 
-	if ( bp_is_active( 'messages' ) ) {
-		( new Messages\Template( get_current_user_id() ) )->register();
-		( new Messages\Settings() )->register();
-		( new Messages\Ajax() )->register();
-	}
-
-	if ( bp_is_active( 'groups' ) ) {
-		( new Groups\Template() )->register();
-		( new Groups\Settings() )->register();
-		( new Groups\Ajax() )->register();
-	}
+	Plugin::init();
 }
 
 function assets() {
