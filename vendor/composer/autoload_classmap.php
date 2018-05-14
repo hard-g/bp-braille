@@ -12,5 +12,6 @@ return array(
     'HardG\\BpBraille\\Messages\\Ajax' => $baseDir . '/src/Messages/Ajax.php',
     'HardG\\BpBraille\\Messages\\Settings' => $baseDir . '/src/Messages/Settings.php',
     'HardG\\BpBraille\\Messages\\Template' => $baseDir . '/src/Messages/Template.php',
+    'HardG\\BpBraille\\Plugin' => $baseDir . '/src/Plugin.php',
     'HardG\\BpBraille\\Registerable' => $baseDir . '/src/Registerable.php',
 );

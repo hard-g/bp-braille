@@ -27,6 +27,7 @@ class ComposerStaticInitf9d13241df539d9273dd1434587ed13f
         'HardG\\BpBraille\\Messages\\Ajax' => __DIR__ . '/../..' . '/src/Messages/Ajax.php',
         'HardG\\BpBraille\\Messages\\Settings' => __DIR__ . '/../..' . '/src/Messages/Settings.php',
         'HardG\\BpBraille\\Messages\\Template' => __DIR__ . '/../..' . '/src/Messages/Template.php',
+        'HardG\\BpBraille\\Plugin' => __DIR__ . '/../..' . '/src/Plugin.php',
         'HardG\\BpBraille\\Registerable' => __DIR__ . '/../..' . '/src/Registerable.php',
     );
 
