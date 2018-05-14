@@ -7,8 +7,8 @@ use HardG\BpBraille\Registerable;
 class Settings implements Registerable {
 
 	public function register() {
-		add_action( 'bp_after_group_details_admin', [ $this, 'render' ] );
-		add_action( 'groups_group_details_edited', [ $this, 'save' ] );
+		add_action( 'bp_after_group_details_admin', array( $this, 'render' ) );
+		add_action( 'groups_group_details_edited', array( $this, 'save' ) );
 	}
 
 	/**

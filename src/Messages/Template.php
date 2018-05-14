@@ -17,7 +17,7 @@ class Template implements Registerable {
 	}
 
 	public function register() {
-		add_action( 'bp_after_message_meta', [ $this, 'render' ] );
+		add_action( 'bp_after_message_meta', array( $this, 'render' ) );
 	}
 
 	public function render() {

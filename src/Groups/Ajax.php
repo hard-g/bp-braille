@@ -7,7 +7,7 @@ use HardG\BpBraille\Registerable;
 class Ajax implements Registerable {
 
 	public function register() {
-		add_action( 'wp_ajax_bp_groups_braille', [ $this, 'convert' ] );
+		add_action( 'wp_ajax_bp_groups_braille', array( $this, 'convert' ) );
 	}
 
 	/**
@@ -25,9 +25,9 @@ class Ajax implements Registerable {
 		$content = wp_kses_post( $_POST['content'] );
 		$braille = get_braille( null, $content );
 
-		wp_send_json_success( [
+		wp_send_json_success( array(
 			'original' => $content,
 			'braille' => sprintf( '<span class="braille">%s</span>', $braille ),
-		] );
+		) );
 	}
 }

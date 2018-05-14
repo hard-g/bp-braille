@@ -10,8 +10,8 @@ use HardG\BpBraille\Registerable;
 class Settings implements Registerable {
 
 	public function register() {
-		add_action( 'bp_core_general_settings_before_submit', [ $this, 'render' ] );
-		add_action( 'bp_core_general_settings_after_save', [ $this, 'save' ] );
+		add_action( 'bp_core_general_settings_before_submit', array( $this, 'render' ) );
+		add_action( 'bp_core_general_settings_after_save', array( $this, 'save' ) );
 	}
 
 	public function render() {

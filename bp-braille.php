@@ -30,15 +30,15 @@ function bootstrap() {
 }
 
 function assets() {
-	wp_enqueue_script( 'bp-braille', plugins_url( 'public/js/bp-braille.js', __FILE__ ), [ 'jquery' ], '0.2.0' );
-	wp_enqueue_style( 'bp-braille-styles', plugins_url( 'public/css/bp-braille.css', __FILE__ ), [], '0.2.0' );
+	wp_enqueue_script( 'bp-braille', plugins_url( 'public/js/bp-braille.js', __FILE__ ), array( 'jquery' ), '0.2.0' );
+	wp_enqueue_style( 'bp-braille-styles', plugins_url( 'public/css/bp-braille.css', __FILE__ ), array(), '0.2.0' );
 
-	$l10n = [
-		'strings' => [
+	$l10n = array(
+		'strings' => array(
 			'on'  => esc_html__( 'Braille: On', 'bp-braille' ),
 			'off' => esc_html__( 'Braille: Off', 'bp-braille' ),
-		]
-	];
+		)
+	);
 	wp_localize_script( 'bp-braille', 'bpBraille', $l10n );
 }
 
@@ -62,12 +62,12 @@ function braille_works() {
 	$works = get_transient( 'braille_works' );
 
 	if ( false === $works ) {
-		$response = wp_remote_post( $remote_url, [
+		$response = wp_remote_post( $remote_url, array(
 			'timeout' => 45,
-			'headers' => [ 'Content-type: application/json' ],
-			'body' => json_encode( [ 'content' => 'Connection Test' ] ),
-			'cookies' => []
-		] );
+			'headers' => array( 'Content-type: application/json' ),
+			'body' => json_encode( array( 'content' => 'Connection Test' ) ),
+			'cookies' => array()
+		) );
 
 		$code  = wp_remote_retrieve_response_code( $response );
 		$works = ( 200 === $code ) ? 1 : 0;

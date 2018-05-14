@@ -7,8 +7,8 @@ use HardG\BpBraille\Registerable;
 class Template implements Registerable {
 
 	public function register() {
-		add_filter( 'bbp_topic_admin_links', [ $this, 'render' ], 10, 2 );
-		add_filter( 'bbp_reply_admin_links', [ $this, 'render' ], 10, 2 );
+		add_filter( 'bbp_topic_admin_links', array( $this, 'render' ), 10, 2 );
+		add_filter( 'bbp_reply_admin_links', array( $this, 'render' ), 10, 2 );
 	}
 
 	/**
@@ -16,7 +16,7 @@ class Template implements Registerable {
 	 *
 	 * @return void
 	 */
-	public function render( $links = [], $id = 0 ) {
+	public function render( $links = array(), $id = 0 ) {
 		$group = groups_get_current_group();
 
 		if ( empty( $group ) ) {
