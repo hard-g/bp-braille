@@ -34,7 +34,7 @@ class Template implements Registerable {
 			$group->id,
 			$id,
 			wp_create_nonce( "bp-group-braille-{$id}" ),
-			esc_html__( 'Braille: On', 'bp-braille' )
+			esc_html__( 'Enable Braille', 'bp-braille' )
 		);
 
 		return $links;

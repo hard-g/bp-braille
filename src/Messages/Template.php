@@ -35,7 +35,7 @@ class Template implements Registerable {
 
 		?>
 		<div class="message-braille-actions">
-			<a class="braille-on" data-message-id="<?php echo esc_attr( $message_id ); ?>" data-braille-nonce="<?php echo esc_attr( $nonce ); ?>" href="#"><?php esc_html_e( 'Braille: On', 'bp-braille' ); ?></a>
+			<a class="braille-on" data-message-id="<?php echo esc_attr( $message_id ); ?>" data-braille-nonce="<?php echo esc_attr( $nonce ); ?>" href="#"><?php esc_html_e( 'Enable Braille', 'bp-braille' ); ?></a>
 		</div>
 		<?php
 	}

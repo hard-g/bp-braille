@@ -35,8 +35,8 @@ function assets() {
 
 	$l10n = array(
 		'strings' => array(
-			'on'  => esc_html__( 'Braille: On', 'bp-braille' ),
-			'off' => esc_html__( 'Braille: Off', 'bp-braille' ),
+			'on'  => esc_html__( 'Enable Braille', 'bp-braille' ),
+			'off' => esc_html__( 'Disable Braille', 'bp-braille' ),
 		)
 	);
 	wp_localize_script( 'bp-braille', 'bpBraille', $l10n );
